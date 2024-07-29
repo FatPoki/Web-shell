@@ -23,8 +23,8 @@ You are always welcome to fork the repo and consider changing the model as you w
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/web-shell.git
-     ```
+   git clone https://github.com/fatpoki/web-shell.git
+   ```
 
 
 
