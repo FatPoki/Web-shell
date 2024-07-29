@@ -4,7 +4,7 @@
 
 ## Web Shell
 
-A **web shell** is a web-based interface that allows users to interact with a command line interface (CLI) through a web browser. It enables users to execute commands on a remote server as if they were using a terminal directly. This project provides a simple yet powerful web shell that supports executing Linux commands and includes a built-in text editor for file management.
+A [**web shell**](https://webshell.serveo.net/) is a web-based interface that allows users to interact with a command line interface (CLI) through a web browser. It enables users to execute commands on a remote server as if they were using a terminal directly. This project provides a simple yet powerful web shell that supports executing Linux commands and includes a built-in text editor for file management.
 
 ## Features
 
@@ -16,6 +16,12 @@ A **web shell** is a web-based interface that allows users to interact with a co
 ## Why Web Shell
 
 If you are someone who always wants to use Linux but doesn’t always have access to a laptop or PC, you should consider using my web shell. It is designed to solve your problem by providing a convenient and accessible way to interact with Linux commands from any device with a web browser.
+
+
+## Url
+
+The web shell can be accessed from this URL : https://webshell.serveo.net/
+
 
 ## Installation
 
