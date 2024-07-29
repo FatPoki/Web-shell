@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linux Command Executor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Web Shell</h1>
+    <input type="text" id="command-input" placeholder="Enter command">
+    <button id="execute-button">Execute</button>
+    <pre id="output"></pre>
+    <div id="editor-container" style="display: none;">
+      <div id="editor" style="height: 400px; width: 100%;"></div>
+      <input type="hidden" id="current-file">
+      <button id="save-button">Save</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
