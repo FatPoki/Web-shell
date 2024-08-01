@@ -8,17 +8,15 @@ const PORT = 3000;
 const OUTPUT_FILE = path.join(__dirname, '.output.txt');
 const USER_DIR = path.join(__dirname, 'user_files'); // User-specific directory
 
-// Middleware
 const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Ensure the user_files directory exists
+
 if (!fs.existsSync(USER_DIR)) {
   fs.mkdirSync(USER_DIR);
 }
 
-// Sanitize command to prevent unwanted command execution
 function sanitizeCommand(command) {
   const allowedCommands = [
     'ls', 'cat', 'echo', 'pwd', 'cd', 'mkdir', 'rmdir', 'rm', 'touch', 'cp', 'mv',
@@ -35,7 +33,7 @@ function sanitizeCommand(command) {
   throw new Error('Command not allowed');
 }
 
-// Execute command
+
 app.post('/execute', (req, res) => {
   const { command } = req.body;
 
@@ -51,7 +49,7 @@ app.post('/execute', (req, res) => {
           return res.json({ error: err.message });
         }
 
-        // Sanitize output to remove references to restricted directories
+
         const sanitizedOutput = data.replace(new RegExp(__dirname, 'g'), '');
 
         res.json({ output: sanitizedOutput });
@@ -70,7 +68,6 @@ app.post('/execute', (req, res) => {
   }
 });
 
-// Load file content
 app.get('/load', (req, res) => {
   const file = req.query.file;
   const filePath = path.join(USER_DIR, file);
@@ -84,7 +81,6 @@ app.get('/load', (req, res) => {
   });
 });
 
-// Save file content
 app.post('/save', (req, res) => {
   const { filename, content } = req.body;
   const filePath = path.join(USER_DIR, filename);
@@ -97,7 +93,6 @@ app.post('/save', (req, res) => {
   });
 });
 
-// Start server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
